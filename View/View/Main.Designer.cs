@@ -37,6 +37,7 @@ namespace View
             this.optionControl = new View.OptionControl();
             this.lbGeneration = new System.Windows.Forms.Label();
             this.flowerControl = new View.FlowerControl();
+            this.btGeneration = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // optionControl
@@ -62,11 +63,22 @@ namespace View
             this.flowerControl.Size = new System.Drawing.Size(723, 572);
             this.flowerControl.TabIndex = 3;
             // 
+            // btGeneration
+            // 
+            this.btGeneration.Location = new System.Drawing.Point(134, 128);
+            this.btGeneration.Name = "btGeneration";
+            this.btGeneration.Size = new System.Drawing.Size(103, 23);
+            this.btGeneration.TabIndex = 4;
+            this.btGeneration.Text = "Next generation";
+            this.btGeneration.UseVisualStyleBackColor = true;
+            this.btGeneration.Click += new System.EventHandler(this.BtGeneration_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(747, 741);
+            this.Controls.Add(this.btGeneration);
             this.Controls.Add(this.flowerControl);
             this.Controls.Add(this.lbGeneration);
             this.Controls.Add(this.optionControl);
@@ -80,9 +92,10 @@ namespace View
         #endregion
         private OptionControl optionControl;
         private Label lbGeneration;
-        private Garden garden;
+        private Garden garden;  
         private int generation;
         private FlowerControl flowerControl;
+        private Button btGeneration;
     }
 }
 

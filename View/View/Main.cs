@@ -35,5 +35,59 @@ namespace View
         {
            return garden.CountFLowers();
         }
+
+        private void BtGeneration_Click(object sender, EventArgs e)
+        {
+            if(sender == btGeneration)
+            {
+                NextGeneration();
+            }
+            else
+            {
+                throw new MethodAccessException("The sender isn't the source expected: " + sender.ToString());
+            }
+        }
+
+        private void NextGeneration()
+        {
+            CalculateAdaptation();
+
+            SelectParents();
+
+            MergeGen();
+
+
+
+
+            flowerControl.Refresh();
+        }
+
+        private void SelectParents()
+        {
+           
+            
+
+        }
+
+        private void MergeGen()
+        {
+            throw new NotImplementedException(); 
+        }
+
+        private void CalculateAdaptation()
+        {
+            flowerControl.CalculateAdaptation();
+        }
+
+        public int GetSelectedHeight()
+        {
+            int selectedHeight = optionControl.GetSelectedHeight();
+            if (selectedHeight == -1)
+            {
+                selectedHeight = 0;
+            }
+            return selectedHeight;
+            
+        }
     }
 }

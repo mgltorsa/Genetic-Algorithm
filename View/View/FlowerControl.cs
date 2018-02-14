@@ -82,13 +82,13 @@ namespace View
             else if (flower.GetStemColor() == 1)
             {
                 e.Graphics.FillRectangle(Brushes.Green,
-                    flower.WindowPosition, 660 - flower.GetHeight(), flower.GetStemWidth(), flower.GetHeight());
+                    flower.WindowPosition, 550 - flower.GetHeight(), flower.GetStemWidth(), flower.GetHeight());
 
             }
             else if (flower.GetStemColor() == 2)
             {
                 e.Graphics.FillRectangle(Brushes.LightGreen,
-                    flower.WindowPosition, 660 - flower.GetHeight(), flower.GetStemWidth(), flower.GetHeight());
+                    flower.WindowPosition, 550 - flower.GetHeight(), flower.GetStemWidth(), flower.GetHeight());
             }
 
         }
@@ -96,6 +96,18 @@ namespace View
         public void SetMain(Main main)
         {
             this.main = main;
+        }
+
+        public void CalculateAdaptation()
+        {
+            int height = 0, color, size;
+            color = size = height;
+
+            double AHeight = 0.0, AColor, ASize;
+            AColor = ASize = AHeight;
+
+            int selectedOption = main.GetSelectedHeight();
+
         }
 
 

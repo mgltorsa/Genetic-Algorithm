@@ -213,5 +213,8 @@
         private System.Windows.Forms.RadioButton rbSmall;
         private System.Windows.Forms.RadioButton rbBig;
         private System.Windows.Forms.RadioButton rbNormal;
+        public static int LOW = 0, MID = 1, HIGH = 2;
+        public static int BLUE = 0,YELLOW=1,RED=2;
+        public static int SMALL = 0, NORMAL = 1, BIG = 2;
     }
 }
