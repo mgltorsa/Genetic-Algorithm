@@ -15,6 +15,7 @@ namespace Model
 
         public Garden()
         {
+            flowers = new Flower[10];
             Random random = new Random(unchecked((int)DateTime.Now.Ticks));
             for (int n = 0; n < 10; n++)
             {
@@ -22,26 +23,36 @@ namespace Model
                 flowers[n] = temp;
                 flowers[n].WindowPosition = n * 80 + 40;
 
-                // Inicializamos el cromosoma con valores al azar 
+                // Inicialize the chromosome
 
-                // La altura va de 10 a 300 
-                flowers[n].chromosome[0] = random.Next(10, 300);
+                // Height between  10 to 300 
+                flowers[n].SetHeight(random.Next(10, 300));
 
-                // El color de la flor. 0-rojo, 1-azul, 2-amarillo 
-                flowers[n].chromosome[1] = random.Next(0, 3);
+                // Flower's Color. 0-red, 1-blue, 2-yellow 
+                flowers[n].SetColor(random.Next(0, 3));
 
-                // El color del tallo. Diferentes tonos de verde 
-                flowers[n].chromosome[2] = random.Next(0, 3);
+                // Stem's Color. Greens... 
+                flowers[n].SetStemColor(random.Next(0, 3));
 
-                // El ancho del tallo. De 5 a 15 
-                flowers[n].chromosome[3] = random.Next(5, 15);
+                // Stem Width. between 5 to 15 
+                flowers[n].SetStemWidth(random.Next(5, 15));
 
-                // El tamano de la flor. De 20 a 80 
-                flowers[n].chromosome[4] = random.Next(20, 80);
+                // Stem Size. between 20 a 80 
+                flowers[n].SetStemSize(random.Next(20, 80));
 
-                // El tamano del centro de la flor. De 5 a 15 
-                flowers[n].chromosome[5] = random.Next(5, 15);
+                // Size of center of flower. between 5 to 15 
+                flowers[n].SetSizeCenter(random.Next(5, 15));
             }
+        }
+
+        public Flower GetFlowerByIndex(int index)
+        {
+            return flowers[index];
+        }
+
+        public int CountFLowers()
+        {
+            return flowers.Length;
         }
 
     }
