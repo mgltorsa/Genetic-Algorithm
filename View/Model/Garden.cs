@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Garden
+    public class Garden : Interfaz2
     {
         private Flower[] flowers;
         private int generation;
@@ -56,6 +56,6 @@ namespace Model
         }
 
     }
-} 
-    
+}
+
 
